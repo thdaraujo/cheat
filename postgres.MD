@@ -19,6 +19,13 @@ Connect to a database while on psql:
 pqsl$ \c database_name
 ``` 
 
+Display display one column per line (for readability):
+```
+\x
+SELECT * FROM foo... ;
+\x
+```
+
 ## Docker
 
 Running postgres on a docker container and exposing the port to localhost:
