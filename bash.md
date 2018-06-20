@@ -33,7 +33,7 @@ More tips [here](https://danielmiessler.com/study/tmux/)
 
 ## Window management
 
-- Press `ctrl + b %` to split windows vertically
+- Press `CTRL+B %` to split windows vertically
 - Press `CTRL+B "`. to split windows horizontally
 - Press `CTRL+B <arrow>` to move between windows (you can also use `n` and `p` for next and previous
 - Press `CTRL+B z` to maximize current window
