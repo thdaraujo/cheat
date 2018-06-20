@@ -9,7 +9,7 @@ Check subfolders size:
 
 # Freezing command
 
-- `ctrl + z` freezes current process
+- `CTRL+Z` freezes current process
 - `bg` sends process to the background
 - `fg` moves it back into the foreground
 - `jobs` lists user processes
@@ -44,7 +44,7 @@ More tips [here](https://danielmiessler.com/study/tmux/)
 
 # Logs and file digging
 
-log digging
+Log digging and file processing (more tips [data science at the command line](https://www.datascienceatthecommandline.com))
 - `$ head -n 10 filename.log` reads the first `10` lines from `filename`
 - `$ tail -n 10 filename.log` reads the last `10` lines from `filename`
 - `$ tail -n 10 filename.log | grep -i error` pipes the tail into `grep`
