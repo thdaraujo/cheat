@@ -41,3 +41,26 @@ $ psql -h localhost -p 5432 -U postgres
 
 ```
 
+# Tables and object sizes
+
+refs: [Check size of tables and objects in PostgreSQL](https://wiki-bsse.ethz.ch/display/ITDOC/Check+size+of+tables+and+objects+in+PostgreSQL+database)
+
+Select the size of all tables:
+```
+SELECT
+   relname as "Table",
+   pg_size_pretty(pg_total_relation_size(relid)) As "Size",
+   pg_size_pretty(pg_total_relation_size(relid) - pg_relation_size(relid)) as "External Size"
+   FROM pg_catalog.pg_statio_user_tables ORDER BY pg_total_relation_size(relid) DESC;
+```
+
+Size of objects, entries (rows) and its type (r for table, i for index, t for toast data):
+```
+SELECT
+   relname AS objectname,
+   relkind AS objecttype,
+   reltuples AS "#entries", pg_size_pretty(relpages::bigint*8*1024) AS size
+   FROM pg_class
+   WHERE relpages >= 8
+   ORDER BY relpages DESC;
+```
