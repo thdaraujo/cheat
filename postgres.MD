@@ -64,3 +64,15 @@ SELECT
    WHERE relpages >= 8
    ORDER BY relpages DESC;
 ```
+
+# Read-only user
+
+```
+CREATE ROLE read_only_user WITH LOGIN PASSWORD 'SOME-LONG-PASSWORD-HERE' 
+NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION VALID UNTIL 'infinity';
+
+GRANT CONNECT ON DATABASE mydb TO read_only_user;
+GRANT USAGE ON SCHEMA public TO read_only_user;
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO read_only_user;
+GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO read_only_user;
+```
