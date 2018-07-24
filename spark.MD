@@ -28,7 +28,7 @@ if __name__ == "__main__":
     
     spark = SparkSession\
             .builder\
-            .appName("My cool scrypt")\
+            .appName("My cool script")\
             .getOrCreate() 
     
     sc = spark.sparkContext
