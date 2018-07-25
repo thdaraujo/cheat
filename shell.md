@@ -1,5 +1,5 @@
-Bash Tips
--------------
+Shell/bash/terminal Tips
+------------------------
 
 # Folders size
 
