@@ -3,6 +3,25 @@ Apache Spark tips (pyspark)
 
 Full docs [here](https://spark.apache.org/docs/latest/)
 
+# Installing
+
+You can install python and spark with [asdf](https://github.com/asdf-vm/asdf)
+
+```
+$ asdf plugin-add python
+$ asdf install python 3.6.4
+$ asdf global python 3.6.4
+
+```
+
+```
+$ asdf plugin-add spark
+$ asdf install spark 2.3.0
+$ asdf global spark 2.3.0
+```
+
+You might also want to install java, scala, sbt and maven using asdf too, depending on which tools you need.
+
 # Running the shell
 
 ```
