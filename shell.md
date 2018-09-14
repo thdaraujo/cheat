@@ -62,10 +62,10 @@ Log digging and file processing (more tips [data science at the command line](ht
 # jq (json parsing on the command line)
 
 count json delimited logs with timestamps per hour:
-`$ cat somefile.json | jq ".timestamp" | cut -c1-17 |  uniq -c`
+`$ cat somefile.json | jq ".timestamp" | cut -c1-14 |  uniq -c`
 
 or simply:
-`$ cat somefile.json | jq ".timestamp" | uniq -w17 -c`
+`$ cat somefile.json | jq ".timestamp" | uniq -w14 -c`
 (`uniq -wXX`, where *XX* is the number of characters to use in the uniq)
 
 
