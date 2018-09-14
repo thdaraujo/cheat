@@ -57,3 +57,16 @@ Log digging and file processing (more tips [data science at the command line](ht
 - `$ cat filename.log | sort | uniq -c` groups by and counts
 - `$ cat filename.log | sort | uniq -c | sort -nr` group by, count, and sort by count
 - `$ zcat filename.csv.gz` reads gzipped file content
+
+
+# jq (json parsing on the command line)
+
+count json delimited logs with timestamps per hour:
+`$ cat somefile.json | jq ".timestamp" | cut -c1-17 |  uniq -c`
+
+or simply:
+`$ cat somefile.json | jq ".timestamp" | uniq -w17 -c`
+(`uniq -wXX`, where *XX* is the number of characters to use in the uniq)
+
+
+
