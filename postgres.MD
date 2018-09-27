@@ -108,6 +108,13 @@ Slow queries:
 ```
 select queryid, total_time, (total_time::float/calls) as mean_time, left(query,40) as short_query from pg_stat_statements order by total_time desc limit 10;
 ```
+or:
+```
+SELECT now() - query_start as "runtime", usename, datname, waiting, state, query
+  FROM  pg_stat_activity
+  WHERE now() - query_start > '10 minutes'::interval
+ ORDER BY runtime DESC;
+```
 
 Show running queries:
 ```
