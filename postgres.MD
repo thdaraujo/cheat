@@ -76,3 +76,68 @@ GRANT USAGE ON SCHEMA public TO some_user;
 GRANT SELECT ON ALL TABLES IN SCHEMA public TO some_user;
 GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO some_user;
 ```
+
+
+# Performance and pg_stats
+
+(see this [interesting reference](http://okigiveup.net/what-postgresql-tells-you-about-its-performance/))
+Ratio of cache hits to total reads (should be close to 1):
+```
+SELECT blks_hit::float/(blks_read + blks_hit) as cache_hit_ratio
+FROM pg_stat_database
+WHERE datname=current_database();
+```
+
+Ratio of index scans (should be close to 1):
+```
+SELECT sum(idx_scan)/(sum(idx_scan) + sum(seq_scan)) as idx_scan_ratio
+FROM pg_stat_all_tables
+WHERE schemaname='public';
+```
+
+More detailed: 
+```
+SELECT relname,idx_scan::float/(idx_scan+seq_scan+1) as idx_scan_ratio
+FROM pg_stat_all_tables
+WHERE schemaname='public'
+ORDER BY idx_scan_ratio ASC;
+```
+
+
+Slow queries:
+```
+select queryid, total_time, (total_time::float/calls) as mean_time, left(query,40) as short_query from pg_stat_statements order by total_time desc limit 10;
+```
+
+Show running queries:
+```
+SELECT pid, age(clock_timestamp(), query_start), usename, query 
+FROM pg_stat_activity 
+WHERE query != '<IDLE>' AND query NOT ILIKE '%pg_stat_activity%' 
+ORDER BY query_start desc;
+```
+
+
+User tables:
+```
+SELECT * FROM pg_stat_user_tables;
+```
+
+Locks:
+```
+SELECT locktype, database, relation::regclass, mode, pid FROM pg_locks;
+```
+
+Size of tables:
+```
+SELECT 
+       relname AS "table_name", 
+       pg_size_pretty(pg_table_size(C.oid)) AS "table_size" 
+FROM 
+       pg_class C 
+LEFT JOIN pg_namespace N ON (N.oid = C.relnamespace) 
+WHERE nspname NOT IN ('pg_catalog', 'information_schema') AND nspname !~ '^pg_toast' AND relkind IN ('r') 
+ORDER BY pg_table_size(C.oid) 
+DESC LIMIT 10;
+```
+
