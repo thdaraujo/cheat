@@ -24,7 +24,7 @@ sftp> ls
 
 On local
 ```
-sftp> ls
+sftp> lls
 > local-folder/
 > etc/
 ```
