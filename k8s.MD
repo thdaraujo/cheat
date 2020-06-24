@@ -25,6 +25,11 @@ Exec into a pod:
 $ kubectl exec -it some-pode-name -- /bin/bash
 ```
 
+Check pod env:
+```
+kubectl exec pod-name env
+```
+
 Run a postgres one-off psql container:
 ```shell
 $ kubectl run shell-pod --rm -i --tty --image ubuntu -- bash
