@@ -8,4 +8,4 @@ Bundler Cheatsheet
 3. Insert breakpoint for debugging (pry or debugger)
 4. Run `bundle pristine` to restore all gems to their cached version
 
-If you want to use a specific editor, you have to set the $EDITOR or $VISUAL env variables.
+If you want to use a specific editor, you have to set the `$EDITOR` or `$VISUAL` env variables.
