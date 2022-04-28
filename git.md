@@ -42,6 +42,7 @@ $ git bisect skip
 You can run bisect with a script that tests the code. If the script returns `exit 0`, it marks the revision as good:
 ```
 $ git bisect run some_script arguments
+$ git bisect run rake test TEST=some_cool_test.rb
 ```
 
 Another example:
