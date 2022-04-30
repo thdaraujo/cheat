@@ -45,11 +45,116 @@ To know what a key sequence does in the current context (helpful-key), run:
 SPC h k
 ```
 
+Meta-x:
+```
+SPC :
+M-x
+```
+
+## Workspaces
+
+Find project/workspace:
+```
+SPC p p
+```
+
+Switch workspace:
+```
+SPC TAB .
+```
+
+Load workspace from file:
+```
+SPC TAB l
+```
+
+Create new workspace:
+```
+SPC TAB n
+```
+
+Rename workspace:
+```
+SPC TAB r
+```
+
+Save workspace:
+```
+SPC TAB s
+```
+
+## Files
+
+Find file in project with fuzzy search:
+```
+SPC .
+SPC SPC
+```
+
+## Files
+
+Load recently viewed files:
+```
+SPC f r
+```
+
+## Magit
+
+Magit status:
+```
+SPC g g
+```
+
+Stage file:
+```
+SPC g S
+```
+
 
 
 ## Buffers
 
-- New buffer: `SPC b N` (meta buffer new)
+New buffer:
+```
+SPC b N
+```
+
+Switch to buffer outside current project:
+```
+SPC b B
+```
+
+## Finding text
+
+Search project:
+```
+SPC s p
+```
+
+Search buffer:
+```
+/
+```
+
+Then `n` for next, and `N` for previous.
+
+### To edit buffer matches across different files
+
+Edit all files:
+```
+C-c C-e
+```
+
+Save changes:
+```
+C-c C-c
+```
+
+Abandon changes:
+```
+C-c C-k
+```
+
 
 ## Macros
 
@@ -80,3 +185,8 @@ export VISUAL=$EDITOR
 ### Ruby
 
 See [modules/lang/ruby](https://github.com/hlissner/doom-emacs/blob/master/modules/lang/ruby/README.org)
+
+
+## References
+
+- [NoelWelsh doom-emacs](https://noelwelsh.com/posts/doom-emacs/)
