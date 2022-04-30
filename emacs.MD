@@ -30,7 +30,7 @@ TODO
 
 ## Keybindings
 
-To get an interactive list of keybindings:
+To get an interactive list of keybindings (counsel-descbinds):
 ```
 SPC b b
 ```
@@ -39,6 +39,13 @@ To get a list of possible shortcuts on current major/minor modes:
 ```
 SPC ?
 ```
+
+To know what a key sequence does in the current context (helpful-key), run:
+```
+SPC h k
+```
+
+
 
 ## Buffers
 
