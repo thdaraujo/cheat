@@ -51,6 +51,18 @@ SPC :
 M-x
 ```
 
+## Yanking
+
+Copy word:
+```
+y i w
+```
+
+Surround word with something (yank surround ...):
+```
+ysiw
+```
+
 ## Workspaces
 
 Find project/workspace:
@@ -119,6 +131,11 @@ New buffer:
 SPC b N
 ```
 
+Switch to other buffer:
+```
+SPC b b
+```
+
 Switch to buffer outside current project:
 ```
 SPC b B
@@ -138,6 +155,22 @@ Search buffer:
 
 Then `n` for next, and `N` for previous.
 
+### Jump with evil-snipe
+
+When the word is close, use evil-snipe (`s`).
+
+Jump to text with `s` and start typing the characters of the word you want to jump to.
+`S` jumps backwards.
+  `,` to cycle to previous matches
+  `;` to cycle through later matches.
+
+When the word is farther away or in other window, use Avy (`g s SPC`):
+
+use `gs SPC` and type the word to jump or disambiguate.
+
+To select words, use snipe and `v`.
+
+
 ### To edit buffer matches across different files
 
 Edit all files:
@@ -145,15 +178,43 @@ Edit all files:
 C-c C-e
 ```
 
-Save changes:
+Finish/commit changes:
 ```
 C-c C-c
 ```
 
-Abandon changes:
+Abort changes:
 ```
 C-c C-k
 ```
+
+### Multiple cursors
+
+You can use [evil-mc](https://github.com/gabesoft/evil-mc) and [evil-multiedit](https://github.com/hlissner/evil-multiedit).
+
+#### `evil-multiedit`: select what you want to edit and press `R`.
+
+Move cursor over one word and press `M-d` and `M-D` to select next or previous example.
+
+Move between regions with `C-n` and `C-p`. `RET` removes selection of current region.
+
+Once you select the regions, edits made to one region will apply to all of them.
+
+Press `ESC` or `C-[` to exit evil-multiedit.
+
+#### `evil-mc`:
+
+`gzm` to create cursors for the word at point.
+`gzd` to create cursor at point and move to next match.
+`gzz` to create cursor at point.
+
+TODO...
+
+## Source code
+
+`gd` or `SPC c d` to go to definition.
+`gD` or `SPC c D` to list references to symbol at point.
+`K` for documentation.
 
 
 ## Macros
@@ -190,3 +251,5 @@ See [modules/lang/ruby](https://github.com/hlissner/doom-emacs/blob/master/modul
 ## References
 
 - [NoelWelsh doom-emacs](https://noelwelsh.com/posts/doom-emacs/)
+- [Default keybindings](https://github.com/hlissner/doom-emacs/blob/develop/modules/config/default/+evil-bindings.el)
+- [evil-multiedit](https://www.youtube.com/watch?v=zXdT5jY_ui0)
