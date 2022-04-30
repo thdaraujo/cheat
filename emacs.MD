@@ -192,7 +192,9 @@ C-c C-k
 
 You can use [evil-mc](https://github.com/gabesoft/evil-mc) and [evil-multiedit](https://github.com/hlissner/evil-multiedit).
 
-#### `evil-multiedit`: select what you want to edit and press `R`.
+#### `evil-multiedit`:
+
+Select what you want to edit and press `R`.
 
 Move cursor over one word and press `M-d` and `M-D` to select next or previous example.
 
