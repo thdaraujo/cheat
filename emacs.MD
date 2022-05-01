@@ -20,9 +20,9 @@ Open files:
 $ ec filename
 ```
 
-Kill frame:
+Quit:
 ```
-M-x q z
+SPC q q
 ```
 
 ## Cheatsheets
@@ -56,6 +56,16 @@ M-x
 Copy word:
 ```
 y i w
+```
+
+Mark whole buffer:
+```
+C-h x
+```
+
+Copy whole buffer:
+```
+C-h x y
 ```
 
 Surround word with something (yank surround ...):
@@ -93,6 +103,16 @@ SPC TAB r
 Save workspace:
 ```
 SPC TAB s
+```
+
+Open project tab:
+```
+SPC o p
+```
+
+Find file in project tab:
+```
+SPC o p
 ```
 
 ## Files
@@ -241,6 +261,17 @@ TODO...
 # ~/.bashrc
 export EDITOR="emacs -nw"
 export VISUAL=$EDITOR
+```
+## Terminal
+
+Toggle vterm: 
+```
+SPC o t
+```
+
+Open vterm:
+```
+SPC o T
 ```
 
 ## Languages
