@@ -278,8 +278,42 @@ SPC o T
 
 ### Ruby
 
-See [modules/lang/ruby](https://github.com/hlissner/doom-emacs/blob/master/modules/lang/ruby/README.org)
+See [modules/lang/ruby](https://github.com/hlissner/doom-emacs/blob/master/modules/lang/ruby) for more info.
 
+### Elixir
+
+See [modules/lang/elixir](https://github.com/doomemacs/doomemacs/tree/master/modules/lang/elixir) for more info.
+
+
+Start project repl (alchemist iex):
+```
+SPC m i
+```
+
+Format buffer:
+```
+SPC m f
+```
+
+Run all tests
+```
+SPC m t a
+```
+
+Toggle between file and test:
+```
+SPC m t T
+```
+
+Toggle between file and test other window:
+```
+SPC m t t
+```
+
+Exunit rerun:
+```
+SPC m t r
+```
 
 ## References
 
