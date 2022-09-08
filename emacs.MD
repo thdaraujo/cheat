@@ -73,6 +73,18 @@ Surround word with something (yank surround ...):
 ysiw
 ```
 
+## Selecting
+
+To enter visual selection mode (evil-visual-char):
+```
+v
+```
+
+To select a rectangle (evil-visual-block):
+```
+C-v
+```
+
 ## Workspaces
 
 Find project/workspace:
