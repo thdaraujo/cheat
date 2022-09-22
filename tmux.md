@@ -26,3 +26,15 @@ More tips [here](https://danielmiessler.com/study/tmux/)
 - Press `CTRL+B 0` to move to window `0`
 - Press `CTRL+B x` kills current pane
 - Press `CTRL+B d` to detach from current session
+
+## Mouse mode
+
+Enable mouse mode by adding this to `~/.tmux.conf`:
+```
+setw -g mouse on
+```
+
+Then reload the config:
+```
+$ tmux source-file ~/.tmux.conf
+```
