@@ -154,7 +154,20 @@ Stage file:
 SPC g S
 ```
 
+Create branch and checkout `(magit-branch-and-checkout)`:
+```
+SPC g c b
+```
 
+Spinoff branch ` (magit-branch-spinoff)` - create and checkout new branch off of current one, and reset current branch to upstream:
+```
+SPC b s
+```
+
+Spinout branch `(magit-branch-spinout)` - this command behaves like `magit-branch-spinoff`, except that it does not change the current branch:
+```
+SPC b S
+```
 
 ## Buffers
 
