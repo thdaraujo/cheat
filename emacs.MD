@@ -73,6 +73,43 @@ Surround word with something (yank surround ...):
 ysiw
 ```
 
+## Commenting
+
+Comment:
+```
+gcc
+```
+
+## Jumping around
+
+Search and jump on the current line with `f`:
+```
+fa
+fb
+```
+
+Search for `hello` and jump on the current line with `s` + 2 characters:
+```
+she
+slo
+```
+
+Jump forward (`forward-sexp`):
+```
+C-M-f
+```
+
+Jump backwards:
+```
+C-M-b
+```
+
+Jump to matching:
+```
+%
+```
+
+
 ## Selecting
 
 To enter visual selection mode (evil-visual-char):
