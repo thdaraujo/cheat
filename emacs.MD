@@ -295,6 +295,23 @@ Press `ESC` or `C-[` to exit evil-multiedit.
 
 TODO...
 
+#### Search and replace files
+
+```
+SPC s p foo C-; E C-c C-p :%s/old/new/g RET Z Z
+```
+
+- `SPC s p foo`: Find lines of files in project containing `foo`
+- `C-;`: embark-act
+- `E`: export to new buffer
+- `C-c C-p`: makes search result writable
+- `:%s/old/new/g`: evil search and replace
+- `ZZ`: save and close buffer
+
+[ref](https://descore.dk/posts/emacs/search-and-replace-in-doom-emacs/)
+
+
+
 ## Source code
 
 `gd` or `SPC c d` to go to definition.
