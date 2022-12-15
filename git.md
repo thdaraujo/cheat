@@ -51,3 +51,52 @@ $ git bisect start HEAD HEAD~10 --   # culprit is among the last 10 revs (HEAD i
 $ git bisect run ~/some_test.sh      # executes some script on each rev
 $ git bisect reset                   # quit the bisect session
 ```
+
+### Stashing
+
+Stash:
+```
+$ git stash
+```
+
+Stash untracked files:
+```
+$ git stash --include-untracked
+$ git stash -u
+```
+
+Stash all files (tracked and untracked):
+```
+$ git stash --all
+```
+
+Stash and add a name:
+```
+$ git stash push -m "my-stash"
+```
+
+List all stashes:
+```
+$ git stash list
+stash@{0}: On some-branch: my-stash 
+```
+
+Pop from the stash queue:
+```
+$ git stash pop
+```
+
+Apply and remove (pop) a named stash:
+```
+$ git stash pop stash^{/my-stash}
+```
+
+To apply the nth stash:
+```
+$ git stash apply stash@{n}
+```
+
+Apply a stash by name (without removing it):
+```
+$ git stash apply stash^{/my-stash}
+```
