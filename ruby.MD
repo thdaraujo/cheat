@@ -13,7 +13,7 @@ Read from Mac OS X's pbcopy & pbpaste commands.
 
 ## Rubocop
 
-Run Rubocop only on modified filed in the current branch:
+Run Rubocop only on modified files in the current branch:
 ```
 $ git diff-tree --name-only -r --no-commit-id --line-prefix=`git rev-parse --show-toplevel`/  master.. | xargs bundle exec rubocop 
 ```
