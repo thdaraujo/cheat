@@ -52,7 +52,7 @@ $ git bisect run ~/some_test.sh      # executes some script on each rev
 $ git bisect reset                   # quit the bisect session
 ```
 
-### Stashing
+## Stashing
 
 Stash:
 ```
@@ -99,4 +99,16 @@ $ git stash apply stash@{n}
 Apply a stash by name (without removing it):
 ```
 $ git stash apply stash^{/my-stash}
+```
+
+## Diff
+
+List changed files on current branch against main (full path):
+```
+$ git diff-tree --name-only -r --no-commit-id --line-prefix=`git rev-parse --show-toplevel`/  main..
+```
+
+Using diff porcelain (excluding deletions):
+```
+$ git diff --diff-filter=d --name-only main...
 ```
