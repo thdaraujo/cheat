@@ -15,5 +15,5 @@ Read from Mac OS X's pbcopy & pbpaste commands.
 
 Run Rubocop only on modified files in the current branch:
 ```
-$ git diff-tree --name-only -r --no-commit-id --line-prefix=`git rev-parse --show-toplevel`/  master.. | xargs bundle exec rubocop 
+$ git diff-tree --diff-filter=ACM --name-only -r --no-commit-id --line-prefix=`git rev-parse --show-toplevel`/  master.. | xargs bundle exec rubocop 
 ```
