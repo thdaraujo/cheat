@@ -18,6 +18,11 @@ Run Rubocop only on modified files in the current branch:
 $ git diff-tree --diff-filter=d --name-only -r --no-commit-id --line-prefix=`git rev-parse --show-toplevel`/  master.. | xargs bundle exec rubocop 
 ```
 
+Or standardrb:
+```
+git diff --name-only --diff-filter=d <main-branch-name> --line-prefix=`git rev-parse --show-toplevel`/  | xargs standardrb
+```
+
 Script:
 ```
 
