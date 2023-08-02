@@ -172,6 +172,29 @@ SPC .
 SPC SPC
 ```
 
+## Search
+
+You can search in project by using `SPC s p`.
+
+*Filtering results*
+
+You can pass arguments to ripgrep by adding `--` to your search.
+
+Filter by file type:
+```
+-- -t ruby
+```
+
+Filter by specific extension:
+```
+foo -- -g *.js
+
+# multiple filters:
+foo -- -g {*.rb,*spec.rb}
+```
+
+[List of ripgrep supported file types](https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md#manual-filtering-file-types)
+
 ## Files
 
 Load recently viewed files:
