@@ -31,5 +31,4 @@ If you don't reinstall Ruby with `--with-jemalloc` set or [if you're using LD_FL
 
 Here's a description of stats:
 - https://github.com/jemalloc/jemalloc/wiki/Use-Case%3A-Basic-Allocator-Statistics
-
-TODO: how to read stats?
+- [Understanding some jemalloc stats for RocksDB](https://smalldatum.blogspot.com/2022/09/understanding-some-jemalloc-stats-for.html)
