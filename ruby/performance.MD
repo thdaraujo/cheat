@@ -21,8 +21,11 @@ __ Begin jemalloc statistics __
 Check if Ruby is using jemalloc:
 ```
 $ ruby -r rbconfig -e "puts RbConfig::CONFIG['MAINLIBS']"
+
+# or
+$ MALLOC_CONF=stats_print:true ruby -e "exit"
 ```
-If you don't reinstall Ruby with `--with-jemalloc` set or [if you're using LD_FLAGS](https://github.com/docker-library/ruby/issues/182), you might not see jemalloc in the output.
+If you don't reinstall Ruby with `--with-jemalloc` set or [if you're using LD_FLAGS](https://github.com/docker-library/ruby/issues/182), you might not see jemalloc in the output in `RbConfigg::CONFIG`.
 
 ### Statistics
 
