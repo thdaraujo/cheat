@@ -29,7 +29,7 @@ Log digging and file processing (more tips [data science at the command line](ht
 - `$ cat filename.log | sort | uniq -c` groups by and counts
 - `$ cat filename.log | sort | uniq -c | sort -nr` group by, count, and sort by count
 - `$ zcat filename.csv.gz` reads gzipped file content
-
+- `zgrep "PATTERN" $(find . -name "*.gz")` greps all gzipped files in current directory
 
 # jq (json parsing on the command line)
 
