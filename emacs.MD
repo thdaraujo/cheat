@@ -418,6 +418,18 @@ Exunit rerun:
 SPC m t r
 ```
 
+## Rspec Mode
+
+### Use Spring
+
+```elisp
+;; in ~/.doom.d/config.el
+
+;; ruby + spring - customize command
+(after! rspec-mode
+  (setq rspec-spec-command "bin/rspec"))
+```
+
 ## References
 
 - [NoelWelsh doom-emacs](https://noelwelsh.com/posts/doom-emacs/)
